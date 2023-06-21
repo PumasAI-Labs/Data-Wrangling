@@ -1,6 +1,6 @@
 ---
-title: Pumas-AI Workshop PLACEHOLDER
-description: CHANGE ME.
+title: Pumas-AI Data Wrangling Workshop 
+description: Data wrangling workshop covering data I/O and the use of DataFramesMeta.
 ---
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
@@ -9,10 +9,10 @@ Short summary about the workshop.
 
 !!! success "Prerequisites"
 
-    This workshop does PLACEHOLDER and PLACEHOLDER.
-    We recommend users being familiar with PLACEHOLDER, especially PLACEHOLDER.
+    We recommend users being familiar with Julia syntax, especially variables and types.
 
-    The formal requirements are the PLACEHOLDER WORKSHOP WITH LINK.
+    The formal requirements are the [Julia Syntax Workshop](https://pumasai-labs.github.io/Julia-Workshop/)
+    and it's prerequisites.
 
 ## Schedule
 
