@@ -2,9 +2,9 @@
 df = CSV.read("demographics.csv", DataFrame)
 
 # Get ages for all female subjects
-female_ages = @chain df begin
+@chain df begin
     @rsubset :ISMALE == 0
-    @select :ID :AGE
+    @select :ID :AGE # We didn't have to pass df as an argument
 end
 
 # More complicated example
@@ -19,6 +19,7 @@ end
         :AGE = mean(:AGE)
         :SCR = mean(:SCR)
         :eGFR = mean(:eGFR)
+        :n = length(:AGE)
     end
 
     @orderby :SEX :WEIGHT_cat # Fix ordering

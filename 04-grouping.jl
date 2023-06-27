@@ -11,12 +11,13 @@ groupby(df, :WEIGHT_cat)
 ## Tip: groupby can take multiple columns
 groupby(df, [:ISMALE, :WEIGHT_cat]) # Now we get 4 groups
 
-# Combining
+# Combining (@combine)
 ## A common thing to do after grouping data is to combine it back with some operation.
 
 # Example: mean age for each sex group
 grouped_df = groupby(df, :ISMALE)
 @combine grouped_df :AGE = mean(:AGE)
+mean((@rsubset df :ISMALE == 0).AGE) # Check the results
 
 # You can also use DataFrames that have been grouped with multiple columns
 combined_df = @combine groupby(df, [:WEIGHT_cat, :ISMALE]) :AGE = mean(:AGE)
@@ -27,10 +28,12 @@ combined_df = @combine groupby(df, [:WEIGHT_cat, :ISMALE]) :AGE = mean(:AGE)
 @combine grouped_df begin
     :AGE = mean(:AGE)
     :WEIGHT = mean(:WEIGHT)
+    :n = length(:AGE) # Calculate the number of subjects for each group
 end
 
 # the @by macro: groupby + @combine in one call
 @by df :ISMALE begin
     :AGE = mean(:AGE)
     :WEIGHT = mean(:WEIGHT)
+    :n = length(:AGE)
 end

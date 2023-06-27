@@ -7,7 +7,8 @@ using DataFrames
 # Note: go to the workshop directory before reading the CSV file
 df = CSV.read("demographics.csv", DataFrame) # read(<filepath>, <sink>)
 
-# As an example, let's change some column names and then save it
+# Writing files
+## As an example, let's change some column names and then save it
 renamed_df = rename(
     df,
     Dict("AGE" => "AGE (years)", "WEIGHT" => "WEIGHT (kg)")
@@ -20,7 +21,7 @@ lowercase_df = rename(lowercase, df) # Make all columns be lowercase
 CSV.write("demographics_new.csv", renamed_df) # write(<filepath>, <DataFrame>)
 # CSV.write("demographics.csv", renamed_df) # Watch out: This would overwrite our original dataset
 
-CSV.read("demographics_new.csv", DataFrame) # Check our new files
+# Check our new files using VS Code
 
 ## Tip: you can read/save data to a folder
 CSV.write("data/demographics_new.csv", renamed_df)
@@ -41,8 +42,9 @@ CSV.read("demographics_eu.csv", DataFrame; delim = ';', decimal = ',')
 
 # You can also use these keyword arguments to write files
 CSV.write("demographics_eu_new.csv", renamed_df; delim = ';', decimal = ',')
+readlines("demographics_eu_new.csv")[1:3]
 
-# Many more options: https://csv.juliadata.org/stable/reading.html#CSV.read
+# There are many more options: https://csv.juliadata.org/stable/reading.html#CSV.read
 
 ## Excel (.xlsx)
 using XLSX
@@ -66,12 +68,12 @@ DataFrame(XLSX.readtable("demographics.xlsx", "Sheet1"; infer_eltypes=true))
 
 # Writing files
 XLSX.writetable("demographics_new.xlsx", renamed_df) # Same syntax as CSV.write (<filepath>, <DataFrame>)
-XLSX.writetable("data/demographics_new.xlsx", renamed_df)
+XLSX.writetable("data/demographics_new.xlsx", renamed_df) # Save to a folder
 
 ## Watch out: if you try to write a file that already exists, you will get an error
 XLSX.writetable("demographics_new.xlsx", lowercase_df) # Won't overwrite, like CSV would
 
-## SAS tables
+## SAS files
 using ReadStatTables
 
 # Reading files
