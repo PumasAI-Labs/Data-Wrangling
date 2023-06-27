@@ -5,7 +5,25 @@ description: Data wrangling workshop covering data I/O and the use of DataFrames
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-Short summary about the workshop.
+This workshop is an **introduction to data wrangling in Julia** with a focus on data I/O and `DataFramesMeta`. We will cover the following topics: 
+
+- **Reading and writing data**:
+    - CSV files
+    - Excel (.xlsx) files
+    - SAS (.sasb7dat and .xpt)
+
+- **Select**:
+    - Selecting specific columns and rows using `@select` and `@subset` macros
+
+- **Transform**:
+    - Applying transformations to one or more columns using the `@transform` macro
+
+- **Grouping and combining**:
+    - Grouping data using the `groupby` function
+    - Combining groups and summarizing data using the `@combine` and `@by` macros
+
+- **Chaining**:
+    - Perform all data wrangling operations in a single block using the `@chain` macro
 
 !!! success "Prerequisites"
 
@@ -27,9 +45,7 @@ please send an email to <training@pumas.ai>.
 
 ## Authors
 
-- Author 1 - <email@example.com>
-- Author 2 - <email@example.com>
-- Author 3 - <email@example.com>
+- Juan José González Oneto - <j.oneto@pumas.ai>
 
 ## License
 
