@@ -34,9 +34,15 @@ This workshop is an **introduction to data wrangling in Julia** with a focus on 
 
 ## Schedule
 
-| Time (HH:MM) | Activity | Description                              |
-| ------------ | -------- | ---------------------------------------- |
-| 00:00        | Setup    | Download files required for the workshop |
+| Time (HH:MM) | Activity                 | Description                                 |
+|--------------|--------------------------|---------------------------------------------|
+| 00:00        | Setup                    | Download files required for the workshop    |
+| 00:25        | Reading and writing data | Showcase `01-files.jl`                      |
+| 00:40        | Select                   | Showcase `02-select.jl`                     |
+| 00:50        | Transform                | Showcase `03-transform.jl`                  |
+| 01:00        | Grouping and combining   | Showcase `04-grouping.jl`                   |
+| 01:05        | Chaining                 | Showcase `05-chaining.jl`                   |
+| 01:15        | Closing remarks          | See if there are any questions and feedback |
 
 ## Get in touch
 
