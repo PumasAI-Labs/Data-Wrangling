@@ -30,7 +30,7 @@ This workshop is an **introduction to data wrangling in Julia** with a focus on 
     We recommend users being familiar with Julia syntax, especially variables and types.
 
     The formal requirements are the [Julia Syntax Workshop](https://pumasai-labs.github.io/Julia-Workshop/)
-    and it's prerequisites.
+    and its pre-requisites.
 
 ## Schedule
 
