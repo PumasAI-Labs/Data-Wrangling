@@ -11,6 +11,9 @@ df.WEIGHT
 df[!, "AGE"] # Indexing, as if it was a matrix
 df[!, "WEIGHT"]
 
+## Tip: get a copy of the column (instead of the actual column)
+df[:, "AGE"] # If you modify this, you won't be modifying the original DataFrame
+
 ## Get multiple columns
 df[!, ["AGE", "WEIGHT"]] # This gets messy quickly
 

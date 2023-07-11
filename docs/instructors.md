@@ -28,7 +28,9 @@ Next, go over the contents of `02-select.jl`. First, discuss the `names` functio
 names of a `DataFrame`, which could be useful when working with `DataFrames` that have a large number of columns. After that, show the different alternatives
 that there are to retrieve the contents of a single column (dot syntax such as `DataFrame.column_name` and indexing). Participants might be curious about the
 difference between these two methods. If that is the case, you can explain that the dot syntax is simpler and more convenient to type, but that indexing is more 
-flexible and powerful. Additionally, some users could find the indexing syntax more intuitive, even if it is more verbose.
+flexible and powerful. Additionally, some users could find the indexing syntax more intuitive, even if it is more verbose. When
+going over indexing, make sure to explain the difference between using `!` and using `:` to retrieve all rows from a column (`!`
+returns the column, while `:` returns a copy of it).
 
 Afterward, showcase how to select specific columns from a `DataFrame` using the `@select` macro provided by `DataFramesMeta.jl`. This will be the first
 time in the workshop in which attendees will use `DataFramesMeta.jl`, so you can take this opportunity to provide a brief overview of the package and its 

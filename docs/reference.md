@@ -62,7 +62,7 @@ you can write `@groupby <column>` instead of `@groupby <DataFrame> <column>`.
 | Inspect the sheet names of an Excel file | `XLSX.readxlsx(<filepath>)` and `XLSX.sheetnames(<result of readxlsx>)` (optional) | The result of `XLSX.readxlsx` will print a table containing the sheet names. You can optionally then run `XLSX.sheetnames` on the result of `readxlsx` to get a `Vector` with all the sheet names |
 | Read a SAS file (.sasb7dat and .xpt) | `DataFrame(readstat(<filepath>))` | | | 
 | Get the column names of a `DataFrame` | `names(<DataFrame>)` | | |
-| Get the values from a `DataFrame`'s column | `DataFrame.column_name` or `DataFrame[!, column_name]` | The dot syntax is more readable and easier to type, but the indexing syntax could be more intuitive for some users |
+| Get the values from a `DataFrame`'s column | `DataFrame.column_name`, `DataFrame[!, column_name]` or `DataFrame[:, column_name]` | The dot syntax is more readable and easier to type, but the indexing syntax could be more intuitive for some users. Using `:` when indexing returns a copy of the column, while using `!` returns the original column from the `DataFrame` (you could use the result of indexing with `!` to modify the source `DataFrame`) |
 | Select one or more columns from a `DataFrame` | `@select <DataFrame> column1 column2 ...` | Can also be done through indexing, but the `@select` macro is more convenient and expressive |
 | Use the row version of a `DataFramesMeta.jl` macro | `@r<macro>` (e.g `@rsubset`, `@rtransform`, etc.) | |
 | Filter rows in a `DataFrame` using a boolean expression | `@[r]subset <DataFrame> <expression>` | |  
