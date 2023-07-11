@@ -82,9 +82,29 @@ CSV files
 : CSV stands for **C**omma-**S**eparated **V**alues. It is a popular file format that uses lines to represent rows (observations)
 and commas (`,`) to separate values (although other characters such as `;` can also be used).
 
+Sink (from `CSV.read`)
+
+: It is the second positional argument from `CSV.read` and is used to specify where to store or materialize the parsed data from the CSV file.
+Most of the time you will want to set use a `DataFrame` (`CSV.read(<filename>, DataFrame)`)
+
+Excel
+
+: Excel is a widely used spreadsheet program developed by Microsoft. Excel files typically have the `.xls` and `.xlsx` extensions, but the `.xlsx` extension
+should be preferred.
+
+SAS data files
+
+: Data format used and created by the SAS statistical software. They come in two common extensions: `.sas7bdat` and `.xpt`. These files can be read in Julia 
+using the `ReadStatTables.jl` package.
+
 `DataFrame`
 
 : `DataFrame`s are a versatile and widely used data structure that represents tabular data. You can use them in Julia through the `DataFrames.jl` package.
+
+`DataFrames.jl`
+
+: Julia package that allows working with `DataFrames` in Julia. It has a similar design and functionality to other well-known packages such as 
+[`pandas`](https://pandas.pydata.org/) from Python or [`dplyr`](https://dplyr.tidyverse.org/) from R.
 
 `DataFramesMeta.jl`
 
