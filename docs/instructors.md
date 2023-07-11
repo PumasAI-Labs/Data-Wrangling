@@ -17,8 +17,9 @@ Next, go over the use of the `XLSX.jl` package to read Excel files. Start by exp
 required to provide the sheet name as an argument and that most of the time, you will want to convert the output from `XLSX.readtable` to a `DataFrame`. 
 There may be questions about what to do if the user doesn't know the sheet names, which you can address by showing how to use `XLSX.readxlsx` and
 `XLSX.sheetnames` to obtain a list of sheet names in an Excel file. You might also find it useful to demonstrate how to open an Excel file inside of 
-VS Code. Once you have covered how to read files, show how to write files. Make sure to mention that `XLSX.jl` will not override an existing file like `CSV.jl` 
-would. Instead, you will get an error if you try to create a file that already exists.
+VS Code (using the Office Viewer extension, which is installed by default in JuliaHub). Once you have covered how to read files, show how to write files. Make 
+sure to mention that `XLSX.jl` will not override an existing file like `CSV.jl` would. Instead, you will get an error if you try to create a file that 
+already exists.
 
 The last topic for `01-files.jl` is SAS files (`.sasb7dat` and `.xpt`), which can be read using the `readstat` function from the `ReadStatTables.jl` package. 
 However, note that the current version of `ReadStatTables.jl` only supports reading files, and write support is still experimental.
