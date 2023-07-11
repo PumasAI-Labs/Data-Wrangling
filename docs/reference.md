@@ -26,7 +26,7 @@ about the sheets in the Excel file, you can use `XLSX.readxlsx` and `XLSX.sheetn
 - You can read and write files from different locations by providing the full or relative path instead of just the file name. For more information on 
 specifying robust and complex file paths, refer to the [Filesystem](https://docs.julialang.org/en/v1/base/file/#Filesystem) section in the Julia documentation.
 - To obtain a `Vector` with all the column names of a `DataFrame`, you can use the `names` function. This is particularly useful when examining 
-`DataFrames` with a large number of columns.
+`DataFrame`s with a large number of columns.
 - `DataFramesMeta.jl` imports `DataFrames.jl`, allowing you to import only `DataFramesMeta.jl` and still have access to the functions from `DataFrames.jl`.
 - You can select a group of columns from a `DataFrame` using the `@select` macro provided by `DataFramesMeta.jl`.
 - Instead of specifying which columns you want to select, you can specify the columns that you **don't** want to select using the `Not` operator,
