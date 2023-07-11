@@ -11,7 +11,7 @@ groupby(df, :WEIGHT_cat)
 ## Tip: groupby can take multiple columns as grouping keys
 groupby(df, [:ISMALE, :WEIGHT_cat]) # Now we get 4 groups
 
-# Combining (@combine)
+# Summarizing (@combine)
 ## A common thing to do after grouping data is to combine it back with some operation.
 
 # Example: mean age for each sex group
