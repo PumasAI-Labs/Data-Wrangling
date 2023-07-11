@@ -6,10 +6,12 @@ title: Instructor's Notes for Pumas-AI Data Wrangling Workshop
 
 Start with `01-files.jl`, which covers file handling in Julia. Begin by emphasizing the significance of working in the correct 
 directory before reading or writing data and how omitting this consideration could lead to errors. Show how to use the `pwd` function to verify the present 
-working directory and how to use `cd` to navigate to another directory if needed. If there are participants who know how to use shell commands, you can mention 
-how to enter the `shell>` mode in the REPL by typing `;`. Next, focus on the CSV format. Make sure to highlight the importance of this format and provide an 
-in-depth explanation of how to read and write CSV files to the present working directory and to a different data folder. One of the examples provided involves 
-using the `rename` function, so make sure to go over how it can be used to change column names in a `DataFrame`.
+working directory and how to use `cd` to navigate to another directory if needed. Some users might find it more convenient to right click on the file and use
+the `Julia: Change to This Directory` option, which will automatically move the Julia REPL to the directory containing the selected file. If there are 
+participants who know how to use shell commands, you can mention how to enter the `shell>` mode in the REPL by typing `;`. Next, focus on the CSV format. Make 
+sure to highlight the importance of this format and provide an in-depth explanation of how to read and write CSV files to the present working directory and 
+to a different data folder. One of the examples provided involves using the `rename` function, so make sure to go over how it can be used to change column names 
+in a `DataFrame`.
 
 Next, go over the use of the `XLSX.jl` package to read Excel files. Start by explaining how to read an Excel file using `XLSX.readtable`, emphasizing that it is 
 required to provide the sheet name as an argument and that most of the time, you will want to convert the output from `XLSX.readtable` to a `DataFrame`. 
