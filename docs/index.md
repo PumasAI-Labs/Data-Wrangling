@@ -5,12 +5,12 @@ description: Template for data wrangling workshop covering data I/O and the use 
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-This workshop is an **introduction to data wrangling in Julia** with a focus on data I/O and `DataFramesMeta`. We will cover the following topics: 
+This workshop is an **introduction to data wrangling in Julia** with a focus on data I/O and `DataFramesMeta.jl`. We will cover the following topics: 
 
 - **Reading and writing data**:
     - CSV files
-    - Excel (.xlsx) files
-    - SAS (.sasb7dat and .xpt)
+    - Excel (`.xlsx`) files
+    - SAS (`.sasb7dat` and `.xpt`)
 
 - **Select**:
     - Selecting specific columns and rows using `@select` and `@subset` macros

@@ -45,14 +45,14 @@ df[4:16, All()] # Get rows 4 to 16 for all columns
     :WEIGHT .< 50 # Get subjects that weigh less than 50 kg
 end
 
-## Tip: use rsubset instead of broadcasting everything (.>, .==, etc.)
+## Tip: use @rsubset instead of broadcasting everything (.>, .==, etc.)
 @rsubset df begin
     :AGE > 60
     :ISMALE == 1
     :WEIGHT < 50
 end
 
-## You don't always want to use rsubset
+## You don't always want to use @rsubset
 @rsubset df :WEIGHT > mean(:WEIGHT)
 @subset df :WEIGHT .> mean(:WEIGHT)
 

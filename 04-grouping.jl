@@ -4,11 +4,11 @@ df = CSV.read("demographics.csv", DataFrame) # Load a fresh copy of our dataset
 # The groupby function
 groupby(df, :ISMALE) # Group subjects according to sex
 
-## More complicated example: transform + group
+## More complicated example: @transform + groupby
 @rtransform! df :WEIGHT_cat = :WEIGHT > 70 ? "Over 70 kg" : "Under 70 kg"
 groupby(df, :WEIGHT_cat)
 
-## Tip: groupby can take multiple columns
+## Tip: groupby can take multiple columns as grouping keys
 groupby(df, [:ISMALE, :WEIGHT_cat]) # Now we get 4 groups
 
 # Combining (@combine)

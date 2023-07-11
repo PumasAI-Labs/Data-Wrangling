@@ -5,6 +5,8 @@ using CSV
 using DataFrames
 
 # Note: go to the workshop directory before reading the CSV file
+# by right-clicking on the desired directory and selecting
+# `Julia: Change to this directory
 df = CSV.read("demographics.csv", DataFrame) # read(<filepath>, <sink>)
 
 # Writing files
@@ -32,11 +34,11 @@ readlines("demographics_eu.csv")[1:3]
 readlines("demographics.csv")[1:3] # Standard format
 
 # - delim: CSV files are separated by commas most of the time, but sometimes other
-#   characters like ";" or "\t" are used.
+#   characters like ';' or '\t' are used.
 CSV.read("demographics_eu.csv", DataFrame; delim = ';') # Works, but the numbers were parsed as strings
 
 # - decimal: if the file contains Floats and they are separated by something different than
-#   "." (e.g 3.14), you must specify which character is used. If you ever need to use this, 
+#   '.' (e.g 3.14), you must specify which character is used. If you ever need to use this, 
 #   it will probably be because decimals are separated by commas (e.g 3,14)
 CSV.read("demographics_eu.csv", DataFrame; delim = ';', decimal = ',')
 
@@ -64,7 +66,7 @@ DataFrame(XLSX.readtable("demographics.xlsx", 1)) # We get the first sheet
 DataFrame(XLSX.readtable("data/demographics.xlsx", "Sheet1"))
 
 # Allow XLSX to infer types (columns will be Any by default)
-DataFrame(XLSX.readtable("demographics.xlsx", "Sheet1"; infer_eltypes=true))
+DataFrame(XLSX.readtable("demographics.xlsx", "Sheet1"; infer_eltypes=true)) # You will most definitely want to infer the columns types
 
 # Writing files
 XLSX.writetable("demographics_new.xlsx", renamed_df) # Same syntax as CSV.write (<filepath>, <DataFrame>)

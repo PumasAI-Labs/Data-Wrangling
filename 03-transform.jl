@@ -31,7 +31,7 @@ df # Our original DataFrame remains unchanged
 @rtransform! df :SEX = :ISMALE == 0 ? "Female" : "Male" # Use ! at the end to modify the source
 df # Watch out: we lost the original DataFrame (we would have to reread our source file)
 
-## Tip: this works for all of DataFramesMeta's macros
+## Tip: this works for all of DataFramesMeta.jl's macros
 @rsubset! df :SEX == "Female"
 df # Now we only have female subjects
 
