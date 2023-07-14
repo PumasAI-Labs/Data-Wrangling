@@ -24,7 +24,7 @@ already exists.
 The last topic for `01-files.jl` is SAS files (`.sasb7dat` and `.xpt`), which can be read using the `readstat` function from the `ReadStatTables.jl` package. 
 However, note that the current version of `ReadStatTables.jl` only supports reading files, and write support is still experimental.
 
-Next, go over the contents of `02-select.jl`. First, discuss the `names` function, which allows us to obtain a `Vector` containing all the column 
+Next, go over the contents of `02-select_subset.jl`. First, discuss the `names` function, which allows us to obtain a `Vector` containing all the column 
 names of a `DataFrame`, which could be useful when working with `DataFrames` that have a large number of columns. After that, show the different alternatives
 that there are to retrieve the contents of a single column (dot syntax such as `DataFrame.column_name` and indexing). Participants might be curious about the
 difference between these two methods. If that is the case, you can explain that the dot syntax is simpler and more convenient to type, but that indexing is more 
