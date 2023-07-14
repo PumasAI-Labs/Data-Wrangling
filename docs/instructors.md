@@ -54,10 +54,12 @@ Lastly, cover the mutating version of the macros, which allow direct modificatio
 accessed by appending an exclamation mark (`!`) at the end of the macro call, such as `@[r]transform!` or `select!`. This feature is particularly handy when 
 there is a need to update or transform data in-place, eliminating the requirement for creating additional copies of the `DataFrame`.
 
-Move on to the `04-grouping.jl` script. Begin by showing the `groupby` function, which allows grouping data based on specific columns. Next, show the common
-pattern of using `groupby` together with `@combine` to apply operations on grouped data and generate aggregated results. Make sure to go over the examples and
-cover the cases where one or more columns are used to group data. One of the examples includes the use of the `@orderby` macro, so take this opportunity to
-provide a detailed explanation of how it works.
+Move on to the `04-grouping.jl` script. Begin by showing the `groupby` function, which allows grouping data based on specific columns. If users are curious 
+about the return values of `groupby`, you can mention that it returns a `GroupedDataFrame`, which can be inspected through indexing and manipulated with 
+`transform` and `select` (you can find more details about it in [`groupby`'s documentation](https://dataframes.juliadata.org/stable/lib/functions/#DataFrames.groupby)). Next, 
+show the common pattern of using `groupby` with `@combine` to apply operations on grouped data and generate aggregated results. Make sure to go over 
+the examples and cover the cases where one or more columns are used to group data. One of the examples includes the use of the `@orderby` macro, so take this 
+opportunity to provide a detailed explanation of how it works.
 
 Once participants are comfortable with using `groupby` and `@combine`, you can introduce the `@by` macro, which provides a concise alternative to using 
 `groupby` and `@combine` by streamlining the process of grouping data and applying operations in a single call. Use the example provided in the script to show a 
