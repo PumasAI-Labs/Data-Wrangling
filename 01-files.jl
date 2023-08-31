@@ -11,10 +11,7 @@ df = CSV.read("demographics.csv", DataFrame) # read(<filepath>, <sink>)
 
 # Writing files
 ## As an example, let's change some column names and then save it
-renamed_df = rename(
-    df,
-    Dict("AGE" => "AGE (years)", "WEIGHT" => "WEIGHT (kg)")
-)
+renamed_df = rename(df, Dict("AGE" => "AGE (years)", "WEIGHT" => "WEIGHT (kg)"))
 
 ## Tip: you can rename columns programmatically by passing a function
 lowercase_df = rename(lowercase, df) # Make all columns be lowercase
@@ -66,7 +63,7 @@ DataFrame(XLSX.readtable("demographics.xlsx", 1)) # We get the first sheet
 DataFrame(XLSX.readtable("data/demographics.xlsx", "Sheet1"))
 
 # Allow XLSX to infer types (columns will be Any by default)
-DataFrame(XLSX.readtable("demographics.xlsx", "Sheet1"; infer_eltypes=true)) # You will most definitely want to infer the columns types
+DataFrame(XLSX.readtable("demographics.xlsx", "Sheet1"; infer_eltypes = true)) # You will most definitely want to infer the columns types
 
 # Writing files
 XLSX.writetable("demographics_new.xlsx", renamed_df) # Same syntax as CSV.write (<filepath>, <DataFrame>)
@@ -93,7 +90,7 @@ DataFrame(readstat("iv_bolus_sd.xpt"))
 ##############################################################################################
 # Optional: run this to delete all the files created in the examples
 begin
-    root_files = filter(contains("new"), readdir())
-    data_files = joinpath.("data", filter(contains("new"), readdir("data")))
-    foreach(rm, vcat(root_files, data_files))
+  root_files = filter(contains("new"), readdir())
+  data_files = joinpath.("data", filter(contains("new"), readdir("data")))
+  foreach(rm, vcat(root_files, data_files))
 end

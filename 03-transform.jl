@@ -12,16 +12,16 @@ df
 
 # You can also apply multiple transformations at once
 @rtransform df begin
-    :ISMALE = :ISMALE == 0 ? " Female" : "Male"
-    :AGE = Int(round(:AGE, digits=0)) # Round age to an integer
-    :AGE_months = :AGE * 12 # Calculate age in months
+  :ISMALE = :ISMALE == 0 ? " Female" : "Male"
+  :AGE = Int(round(:AGE, digits = 0)) # Round age to an integer
+  :AGE_months = :AGE * 12 # Calculate age in months
 end
 
 # Notice that our age in months was not computed from the rounded version of the AGE column
 ## We have to use @astable to be able to use intermediate results
 @rtransform df @astable begin
-    :AGE = Int(round(:AGE, digits=0))
-    :AGE_months = :AGE * 12
+  :AGE = Int(round(:AGE, digits = 0))
+  :AGE_months = :AGE * 12
 end
 
 # Modify the original DataFrame
@@ -37,4 +37,3 @@ df # Now we only have female subjects
 
 @select! df :AGE :WEIGHT :SEX
 df # Now we lost the rest of the columns
-
