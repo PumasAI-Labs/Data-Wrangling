@@ -90,7 +90,7 @@ DataFrame(readstat("iv_bolus_sd.xpt"))
 ##############################################################################################
 # Optional: run this to delete all the files created in the examples
 begin
-  root_files = filter(contains("new"), readdir())
-  data_files = joinpath.("data", filter(contains("new"), readdir("data")))
-  foreach(rm, vcat(root_files, data_files))
+    root_files = filter(contains("new"), readdir())
+    data_files = joinpath.("data", filter(contains("new"), readdir("data")))
+    foreach(rm, vcat(root_files, data_files))
 end

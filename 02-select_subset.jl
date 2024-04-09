@@ -24,9 +24,9 @@ using DataFramesMeta # You don't need to import DataFrames if you import DataFra
 @select(df, :AGE, :WEIGHT) # We can also call it in a similar way to functions
 
 @select df begin # block syntax, probably the best alternative for multiple columns
-  :ID
-  :AGE
-  :WEIGHT
+    :ID
+    :AGE
+    :WEIGHT
 end
 
 ## Tip: select columns the other way around
@@ -43,16 +43,16 @@ df[4:16, All()] # Get rows 4 to 16 for all columns
 
 # You can also have multiple conditions
 @subset df begin
-  :AGE .> 60
-  :ISMALE .== 1 # Get males only
-  :WEIGHT .< 50 # Get subjects that weigh less than 50 kg
+    :AGE .> 60
+    :ISMALE .== 1 # Get males only
+    :WEIGHT .< 50 # Get subjects that weigh less than 50 kg
 end
 
 ## Tip: use @rsubset instead of broadcasting everything (.>, .==, etc.)
 @rsubset df begin
-  :AGE > 60
-  :ISMALE == 1
-  :WEIGHT < 50
+    :AGE > 60
+    :ISMALE == 1
+    :WEIGHT < 50
 end
 
 ## You don't always want to use @rsubset
