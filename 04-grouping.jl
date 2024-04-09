@@ -26,14 +26,14 @@ combined_df = @combine groupby(df, [:WEIGHT_cat, :ISMALE]) :AGE = mean(:AGE)
 
 ## Tip: you can include multiple calculations inside of @combine
 @combine grouped_df begin
-  :AGE = mean(:AGE)
-  :WEIGHT = mean(:WEIGHT)
-  :n = length(:AGE) # Calculate the number of subjects for each group
+    :AGE = mean(:AGE)
+    :WEIGHT = mean(:WEIGHT)
+    :n = length(:AGE) # Calculate the number of subjects for each group
 end
 
 # the @by macro: groupby + @combine in one call
 @by df :ISMALE begin
-  :AGE = mean(:AGE)
-  :WEIGHT = mean(:WEIGHT)
-  :n = length(:AGE)
+    :AGE = mean(:AGE)
+    :WEIGHT = mean(:WEIGHT)
+    :n = length(:AGE)
 end
